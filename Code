@@ -1,0 +1,86 @@
+#include <iostream>
+using namespace std;
+
+// Initial money
+double balance = 100.00;
+
+// Display menu
+void showMenu() {
+    cout << "\n===== COFFEE MENU =====\n";
+    cout << "1. Americano - ₱45\n";
+    cout << "2. Latte     - ₱60\n";
+    cout << "3. Cappuccino- ₱75\n";
+    cout << "4. Back to Main Menu\n";
+}
+
+// Buy coffee
+void buyCoffee() {
+    int choice;
+    while (true) {
+        showMenu();
+        cout << "Choose an option: ";
+        cin >> choice;
+
+        if (choice == 4)
+            return;
+
+        double price = 0;
+
+        switch (choice) {
+            case 1: price = 45; break;
+            case 2: price = 60; break;
+            case 3: price = 75; break;
+            default:
+                cout << "Invalid choice!\n";
+                continue;
+        }
+
+        if (balance >= price) {
+            balance -= price;
+            cout << "✔ You bought coffee for ₱" << price << "!\n";
+        } else {
+            cout << "❌ Not enough money!\n";
+        }
+    }
+}
+
+// View balance
+void viewBalance() {
+    cout << "\n===== CURRENT BALANCE =====\n";
+    cout << "Money: ₱" << balance << "\n\n";
+}
+
+// Add money
+void addMoney() {
+    double amount;
+    cout << "Enter amount to add: ₱";
+    cin >> amount;
+    balance += amount;
+    cout << "✔ Money added!\n\n";
+}
+
+// Main menu loop
+int main() {
+    int option;
+
+    while (true) {
+        cout << "\n===== COFFEE SHOP (MONEY SYSTEM) =====\n";
+        cout << "1. Buy Coffee\n";
+        cout << "2. View Balance\n";
+        cout << "3. Add Money\n";
+        cout << "4. Exit\n";
+        cout << "Choose an option: ";
+        cin >> option;
+
+        switch (option) {
+            case 1: buyCoffee(); break;
+            case 2: viewBalance(); break;
+            case 3: addMoney(); break;
+            case 4:
+                cout << "Goodbye!\n";
+                return 0;
+            default:
+                cout << "Invalid option!\n";
+        }
+    }
+}
