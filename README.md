@@ -1,0 +1,1 @@
+Hi sir!!!, this is a code built by ai but the idea's is from me i just seeked help from the ai to help build my ideas, dont worry po kasi ina-aral ko naman po, and till now im learning coding po, sorry po kasi mas mahihiraan po ako pag nag start ako sa  scratch and limited time po us.
